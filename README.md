@@ -54,6 +54,20 @@ made a zine for this project too, its in the repo
 
 ![1.png](/Magazine/Magazine%20of%20Line%20follower%20bot.png)
 
+##BOM
+|Component                                          |Store                |Qty|Unit Price (EGP)|Total (EGP)                    |Total (USD approx)|Link                                                                                                                                     |
+|---------------------------------------------------|---------------------|---|----------------|-------------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+|Arduino Pro Mini 328 5V/16MHz                      |RAM Electronics      |1  |250             |250                            |4.98              |https://www.ram-e-shop.com/shop/arduino-mini-pro-arduino-pro-mini-328-5v-16mhz-7180                                                      |
+|DRV8835 Dual Motor Driver                          |Makers Electronics   |1  |180             |180                            |3.59              |https://makerselectronics.com/product/drv8833-2-channel-dc-motor-driver/?srsltid=AfmBOopl0AXVi_7erC0TRuiovgie-HcAb31S7vhGDk1mQixUt8-UI5Q2|
+|QTR-8RC 8 Channel Line Sensor Array                |Micro Ohm Electronics|1  |135             |135                            |2.69              |https://microohm-eg.com/qtr-8rc-8-channel-line-tracker-reflectance-sensor-array/                                                         |
+|HC-05 Bluetooth Module (6 pin)                     |RAM Electronics      |1  |200             |200                            |3.98              |https://www.ram-e-shop.com/shop/kit-bluetooth-hc05-normal-hc-05-bluetooth-module-normal-6674                                             |
+|7.4V Li-ion Battery Pack 2S-1P 1000mAh w/ BMS + JST|Makers Electronics   |1  |210             |210                            |4.18              |https://makerselectronics.com/product/rechargeable-li-ion-battery-pack-7-4v-2s-1pbms-1000mah-18650-with-jst-cable/                       |
+|L7805CV Voltage Regulator 5V/1A TO-220             |Micro Ohm Electronics|1  |6               |6                              |0.12              |https://microohm-eg.com/product/7805-regulator-ic/                                                                                       |
+|DPDT Slide Power Switch (ON/ON 6 pin)              |Micro Ohm Electronics|1  |10              |10                             |0.2               |https://microohm-eg.com/on-on-switch-6-pin-pcb-mounted-22mm-dpdt-slide-switch/                                                           |
+|Tactile Push Button 12x12x12mm                     |Micro Ohm Electronics|1  |3.5             |3.5                            |0.07              |https://microohm-eg.com/press-12x12x12mm-push-button-switch-4-pin/                                                                       |
+|TOTAL                                              |                     |   |                |994.50 (incl. DRV8835 estimate)|19.81             |                                                                                                                                         |
+
+
 ## results
 
 first place at TechnoXian. now heading to the world competition in Thailand to represent Egypt
