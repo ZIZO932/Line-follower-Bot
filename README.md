@@ -66,6 +66,11 @@ made a zine for this project too, its in the repo
 |DPDT Slide Power Switch (ON/ON 6 pin)              |Micro Ohm Electronics|1  |10              |10                             |0.2               |https://microohm-eg.com/on-on-switch-6-pin-pcb-mounted-22mm-dpdt-slide-switch/                                                           |
 |Tactile Push Button 12x12x12mm                     |Micro Ohm Electronics|1  |3.5             |3.5                            |0.07              |https://microohm-eg.com/press-12x12x12mm-push-button-switch-4-pin/                                                                       |
 |TOTAL                                              |                     |   |                |994.50 (incl. DRV8835 estimate)|19.81             |                                                                                                                                         |
+## Demo videoo 
+
+recorded a demo video that shows it can handle a small map in the s shape: https://youtu.be/TAyl4BceC5A
+
+
 
 
 ## results
