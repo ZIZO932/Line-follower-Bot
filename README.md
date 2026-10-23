@@ -1,6 +1,6 @@
 # Line Follower Bot
 
-so this is my line follower robot, built it for competition and it actually won first place at TechnoXian. because of that im now representing Egypt at the world competition in Thailand which is insane to me
+so this is my line follower robot, built it for competition and it actually won first place at TechnoXian. because of that im now representing Egypt at the world competition in Malaysia which is insane to me
 
 ![1.png](/Images/r1.jpeg)
 ![1.png](/Images/r2.jpeg)
@@ -75,7 +75,7 @@ recorded a demo video that shows it can handle a small map in the s shape: https
 
 ## results
 
-first place at TechnoXian. now heading to the world competition in Thailand to represent Egypt
+first place at TechnoXian. now heading to the world competition in Malaysia to represent Egypt
 
 ## made by
 
