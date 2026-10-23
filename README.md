@@ -1,60 +1,57 @@
 # Line Follower Bot
 
-so this is my line follower robot, built it for competition and it actually won first place at TechnoXian. because of that im now representing Egypt at the world competition in Malaysia which is insane to me
+This is my competition line follower. Our team won first place in the seniors line follower category at TechnoXian Egypt and qualified for the World Cup in Malaysia. I worked on the custom PCB, mechanical design, assembly, and tuning.
 
-![1.png](/Images/r1.jpeg)
-![1.png](/Images/r2.jpeg)
+![Assembled robot](Images/r1.jpeg)
+![Robot build](Images/r2.jpeg)
 
-## what it is
+## What I wanted to learn
 
-a robot that follows a line using a sensor array under it and PID control to stay centered on the line. it can handle straights and sharp turns without losing the line. also has bluetooth so i can change the PID values live instead of reuploading code every single time i want to test something, which saved me so much time
+I wanted to understand PID control properly, so I researched existing line followers and built my own version around an Arduino Pro Mini and a QTR-8RC sensor array.
 
-## why i built it
+The robot uses the sensor array to read the line and adjust the two motors. I also added an HC-05 Bluetooth module so I could change tuning values without uploading the code again every time.
 
-wanted to actually understand PID instead of just copy pasting code from somewhere. looked at a bunch of existing line followers first, found one that used an Arduino Pro Mini with sensor calibration and liked that idea so i built my own version around it from scratch
+## Hardware
 
-## what's on it
+- Arduino Pro Mini
+- QTR-8RC eight-channel reflectance sensor array
+- Dual motor driver, listed as DRV8835 in the original design notes
+- HC-05 Bluetooth module
+- 7.4 V battery and 5 V regulator
+- Power switch and buttons
+- Custom PCB and printed chassis, sensor mount, and battery support
 
-- Arduino Pro Mini as the brain
-- DRV8835 motor driver for the two motors
-- QTR-8RC 8 channel line sensor array
-- HC-05 bluetooth module for tuning
-- 7.4V battery + voltage regulator to step it down to 5V
-- power switch and some buttons
+The original parts list names a DRV8835, but its supplier link points to a DRV8833. Check the circuit files and the board you're using before treating that link as an exact replacement.
 
-final PID values ended up being Kp=0.02, Ki=0, Kd=0.6 after a LOT of testing
+## How the build went
 
-## how i built it
+I started with the schematic, then moved to the PCB. There were footprint issues to fix before routing, and I added mounting holes so the board could screw into the body.
 
-started with research, watched tutorials on PID and read up on other line followers. then did the schematic, arduino + motor driver + sensor array + bluetooth + power stuff all wired together. had a bunch of errors at first, went through it connection by connection until it was clean
+I designed the chassis around the electronics, keeping the sensor low and aligned with the ground and giving the battery its own support. Before the PCB arrived, I tested the controller, Bluetooth connection, motor directions, sensor channels, and regulator on a breadboard. That caught some wiring mistakes early.
 
-after that moved to PCB. had footprint issues, fixed those, then laid everything out and routed it. checked it like 3 times for unconnected nets and bad spacing before i was happy with it. added mounting holes so it screws into the body properly
+Once the board arrived, I soldered it, checked for bridges and wrong orientations, and checked power and ground with a multimeter before powering it up.
 
-did the 3D model around the PCB, made a spot for the sensor to sit low and aligned with the ground, and a little support to hold the battery so it doesnt move around while its driving
+![PCB layout](Images/p1.png)
+![PCB view](Images/p4.png)
+![Schematic](Images/s1.png)
 
-before the PCB even came in i breadboarded everything to test it. checked the arduino uploads fine, HC05 connects, both motors spin both directions on the driver, all 8 sensor channels give readings, regulator puts out a clean 5V. found some wiring mistakes doing this which was good bc caught them early
+## CAD
 
-once the PCB arrived i soldered everything on, checked it over for bridges and bad orientation, used a multimeter to check power/ground before turning it on for the first time. then flashed the first test code to make sure everything talked to each other
+![Chassis design](Images/f1.png)
+![Assembly design](Images/f2.png)
 
-![1.png](/Images/p1.png)
+## Tuning and demo
 
-![1.png](/Images/p4.png)
+The values recorded in my build notes were `Kp = 0.02`, `Ki = 0`, and `Kd = 0.6`. Those belong to this setup and aren't universal settings for another robot.
 
-![1.png](/Images/s1.png)
+[Watch the S-shaped track demo](https://youtu.be/TAyl4BceC5A) or open the [uploaded video](Demo%20video.mp4).
 
+The sketch currently uploaded in `Firmware/` is a motor direction test. Despite its filename, it isn't the full PID or Bluetooth tuning firmware.
 
-## 3D model stuff
+## Parts list
 
-![1.png](/Images/f1.png)
+These are the original component estimates and supplier links. They aren't current prices or a complete cost for the whole robot.
 
-![1.png](/Images/f2.png)
-## zine
-
-made a zine for this project too, its in the repo
-
-![1.png](/Magazine/Magazine%20of%20Line%20follower%20bot.png)
-
-##BOM
 |Component                                          |Store                |Qty|Unit Price (EGP)|Total (EGP)                    |Total (USD approx)|Link                                                                                                                                     |
 |---------------------------------------------------|---------------------|---|----------------|-------------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 |Arduino Pro Mini 328 5V/16MHz                      |RAM Electronics      |1  |250             |250                            |4.98              |https://www.ram-e-shop.com/shop/arduino-mini-pro-arduino-pro-mini-328-5v-16mhz-7180                                                      |
@@ -66,17 +63,22 @@ made a zine for this project too, its in the repo
 |DPDT Slide Power Switch (ON/ON 6 pin)              |Micro Ohm Electronics|1  |10              |10                             |0.2               |https://microohm-eg.com/on-on-switch-6-pin-pcb-mounted-22mm-dpdt-slide-switch/                                                           |
 |Tactile Push Button 12x12x12mm                     |Micro Ohm Electronics|1  |3.5             |3.5                            |0.07              |https://microohm-eg.com/press-12x12x12mm-push-button-switch-4-pin/                                                                       |
 |TOTAL                                              |                     |   |                |994.50 (incl. DRV8835 estimate)|19.81             |                                                                                                                                         |
-## Demo videoo 
 
-recorded a demo video that shows it can handle a small map in the s shape: https://youtu.be/TAyl4BceC5A
+## Zine
 
+![Project zine](Magazine/Magazine%20of%20Line%20follower%20bot.png)
 
+[Open the PDF](Magazine/Magazine%20of%20Line%20follower%20bot.pdf).
 
+## Files
 
-## results
+- [CAD](CAD/) — assembly and STEP model
+- [Individual SolidWorks parts](3D%20model%20source/)
+- [Schematic, PCB, and Gerbers](Schematic%20and%20PCB/)
+- [Motor test sketch](Firmware/Final_code_i_hope.ino)
+- [BOM](BOM.csv)
+- [Build journal](line-follower-bot-journal.md)
 
-first place at TechnoXian. now heading to the world competition in Malaysia to represent Egypt
+I'm also planning a new standalone ATmega328P design: [Line-E](https://github.com/ZIZO932/Line-E).
 
-## made by
-
-Ziad u can call me Zizo too if u want 
+Made by Ziad, or Zizo if you know me from Hack Club.
